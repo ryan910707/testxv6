@@ -24,14 +24,11 @@ struct superblock {
 
 #define FSMAGIC 0x10203040
 
-// TODO: bigfile
-// You may need to modify these.
 #define NDIRECT 12
 #define NINDIRECT (BSIZE / sizeof(uint))
 #define MAXFILE (NDIRECT + NINDIRECT)
 
 // On-disk inode structure
-
 struct dinode {
   short type;           // File type
   short major;          // Major device number (T_DEVICE only)
@@ -60,3 +57,4 @@ struct dirent {
   ushort inum;
   char name[DIRSIZ];
 };
+
